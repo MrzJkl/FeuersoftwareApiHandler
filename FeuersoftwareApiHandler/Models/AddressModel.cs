@@ -1,5 +1,4 @@
-﻿
-namespace FeuersoftwareApiHandler.Models
+﻿namespace FeuersoftwareApiHandler.Models
 {
     public class AddressModel
     {

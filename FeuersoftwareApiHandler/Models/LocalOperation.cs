@@ -1,19 +1,26 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Buffers;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
-
-namespace FeuersoftwareApiHandler.Models
+﻿namespace FeuersoftwareApiHandler.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     public class LocalOperation
     {
+        public LocalOperation(DateTimeOffset start, string keyword, string facts, string ric, string address)
+        {
+            this.Id = 0;
+            this.Keyword = keyword;
+            this.Facts = facts;
+            this.Ric = ric;
+            this.Address = address;
+            this.Properties = new List<OperationProperty>();
+            this.AlarmedVehicles = new List<Vehicle>();
+        }
+
         public int Id { get; set; }
 
         public DateTimeOffset Start { get; set; }
 
-        public DateTimeOffset End { get; set; }
+        public DateTimeOffset? End { get; set; }
 
         public string Status { get; set; }
 

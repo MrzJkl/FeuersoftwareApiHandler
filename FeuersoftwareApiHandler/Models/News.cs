@@ -6,6 +6,19 @@ namespace FeuersoftwareApiHandler.Models
 {
     public class News
     {
+        public News(string title, string content, DateTimeOffset start, DateTimeOffset end)
+        {
+            this.Id = 0;
+            this.Title = title;
+            this.Content = content;
+            this.Start = start;
+            this.End = end;
+            this.Groups = new List<string>();
+            this.MailingLists = new List<string>();
+            this.CreatedBy = "ApiUser";
+            this.Site = "API";
+        }
+
         public int Id { get; set; }
 
         public string Title { get; set; }

@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using FeuersoftwareApiHandler.Models;
-
-namespace FeuersoftwareApiHandler.Services
+﻿namespace FeuersoftwareApiHandler.Services
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Text;
+    using System.Threading.Tasks;
+    using FeuersoftwareApiHandler.Models;
+
     public class ApiService
     {
         static HttpClient client = new HttpClient();

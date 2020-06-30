@@ -1,11 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
-
-namespace FeuersoftwareApiHandler.Models
+﻿namespace FeuersoftwareApiHandler.Models
 {
+    using System;
+    using System.Collections.Generic;
+
     public class Operation
     {
         public int Id { get; set; }
