@@ -90,5 +90,48 @@
         {
             await client.DeleteAsync("interfaces/public/news/" + id);
         }
+
+        public async Task PutNews(News news)
+        {
+            if (news == null || news.Id < 0)
+            {
+                throw new ArgumentNullException(nameof(news));
+            }
+
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, "interfaces/public/news/" + news.Id);
+            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(news), Encoding.UTF8, "application/json");
+
+            await client.SendAsync(request);
+
+        }
+
+        public async Task<IEnumerable<UserStatus>> GetOperationUserStatus(int operationId)
+        {
+            IEnumerable<UserStatus> userStatus = null;
+            HttpResponseMessage response = await client.GetAsync("interfaces/public/operation/" + operationId + "/userstatus");
+            if (response.IsSuccessStatusCode)
+            {
+                userStatus = await response.Content.ReadAsAsync<List<UserStatus>>();
+            }
+            else
+            {
+                throw new HttpRequestException();
+            }
+
+            return userStatus;
+        }
+
+        public async Task PostOperationUserStatus(UserStatus userStatus)
+        {
+            if (userStatus == null)
+            {
+                throw new ArgumentNullException(nameof(userStatus));
+            }
+
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, "interfaces/public/operation/userstatus");
+            request.Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(userStatus), Encoding.UTF8, "application/json");
+
+            await client.SendAsync(request);
+        }
     }
 }

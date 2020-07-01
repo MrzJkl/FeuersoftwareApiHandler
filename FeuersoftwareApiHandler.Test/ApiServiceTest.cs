@@ -65,5 +65,14 @@ namespace FeuersoftwareApiHandler.Test
             ApiService service = new ApiService(apiToken: apiToken, baseAddress: baseAddress);
             await service.DeleteNews(14645);
         }
+
+        [Test]
+        public async Task GetOperationUserStatus_Test()
+        {
+            ApiService service = new ApiService(apiToken: apiToken, baseAddress: baseAddress);
+            IEnumerable<UserStatus> userStatuses = await service.GetOperationUserStatus(427324);
+
+            Assert.NotNull(userStatuses);
+        }
     }
 }
