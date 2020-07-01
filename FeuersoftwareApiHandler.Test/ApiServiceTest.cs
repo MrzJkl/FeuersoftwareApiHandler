@@ -48,7 +48,6 @@ namespace FeuersoftwareApiHandler.Test
         public async Task PostOperation_Test()
         {
             LocalOperation operation = new LocalOperation(
-                start: DateTimeOffset.Now,
                 keyword: "PROBE",
                 facts: "Das ist ein Test",
                 ric: "Schleife1",

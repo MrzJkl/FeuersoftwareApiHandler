@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FeuersoftwareApiHandler.Models
+﻿namespace FeuersoftwareApiHandler.Models
 {
+    /// <summary>
+    /// Enum für den Status eines Mitglieds zu einem Einsatz
+    /// </summary>
     public enum Status
     {
         NotSet = 0,
