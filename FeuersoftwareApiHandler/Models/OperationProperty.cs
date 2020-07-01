@@ -1,13 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FeuersoftwareApiHandler.Models
+﻿namespace FeuersoftwareApiHandler.Models
 {
+    /// <summary>
+    /// Die benutzerdefinierten Felder zum Einsatz
+    /// </summary>
     public class OperationProperty
     {
+        /// <summary>
+        /// Der Schlüssel der Eigenschaft
+        /// </summary>
         public string Key { get; set; }
 
-        public string value { get; set; }
+        /// <summary>
+        /// Der Wert der Eigenschaft
+        /// </summary>
+        public string Value { get; set; }
     }
 }
