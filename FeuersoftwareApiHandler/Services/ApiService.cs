@@ -280,5 +280,27 @@
 
             return vehicleStatus;
         }
+
+        /// <summary>
+        /// Aktualisiert die Benutzer Verfügbarkeit
+        /// </summary>
+        /// <param name="id">Die Benutzer Id oder radioId</param>
+        /// <param name="userAvailability">Die Benutzer Verfügbarkeit</param>
+        /// <returns>Nichts</returns>
+        public async Task PutUserAvailability(string id, UserAvailability userAvailability)
+        {
+            if (userAvailability == null)
+            {
+                throw new ArgumentNullException(nameof(userAvailability));
+            }
+
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Put, "interfaces/public/user/"+id+"/availability/current")
+            {
+                Content = new StringContent(System.Text.Json.JsonSerializer.Serialize(userAvailability), Encoding.UTF8, "application/json")
+            };
+            System.Text.Json.JsonSerializer.Serialize(userAvailability);
+            await client.SendAsync(request);
+
+        }
     }
 }
