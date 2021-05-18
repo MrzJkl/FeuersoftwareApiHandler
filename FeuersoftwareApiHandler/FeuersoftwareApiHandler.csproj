@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Moritz Jökel</Authors>
-    <Copyright>2020, Moritz Jökel</Copyright>
-    <Version>1.1.0</Version>
+    <Copyright>2021, Moritz Jökel</Copyright>
+    <Version>1.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
